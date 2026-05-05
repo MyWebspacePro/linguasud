@@ -98,11 +98,11 @@ export function Footer() {
           </div>
           <div className="mt-16 xl:mt-0 xl:flex xl:gap-[107px] xl:col-span-3 xl:justify-end">
             <div className="mb-12 flex flex-col xl:mb-0 xl:w-40">
-              <h3 className="text-lg font-semibold leading-6 text-white">Sprachen</h3>
+              <h3 className="text-lg font-medium leading-6 text-white">Sprachen</h3>
               <ul role="list" className="mt-6 space-y-4">
                 {navigation.courses.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-lg leading-6 text-gray-300 hover:text-white">
+                    <Link href={item.href} className="text-lg font-normal leading-6 text-gray-300 hover:text-white">
                       {item.name}
                     </Link>
                   </li>
@@ -110,11 +110,11 @@ export function Footer() {
               </ul>
             </div>
             <div className="mb-12 flex flex-col xl:mb-0 xl:w-40">
-              <h3 className="text-lg font-semibold leading-6 text-white">Downloads</h3>
+              <h3 className="text-lg font-medium leading-6 text-white">Downloads</h3>
               <ul role="list" className="mt-6 space-y-4">
                 {navigation.downloads.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-lg leading-6 text-gray-300 hover:text-white">
+                    <Link href={item.href} className="text-lg font-normal leading-6 text-gray-300 hover:text-white">
                       {item.name}
                     </Link>
                   </li>
@@ -122,11 +122,11 @@ export function Footer() {
               </ul>
             </div>
             <div className="flex flex-col xl:w-40">
-              <h3 className="text-lg font-semibold leading-6 text-white">Rechtliches</h3>
+              <h3 className="text-lg font-medium leading-6 text-white">Rechtliches</h3>
               <ul role="list" className="mt-6 space-y-4">
                 {navigation.legal.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-lg leading-6 text-gray-300 hover:text-white">
+                    <Link href={item.href} className="text-lg font-normal leading-6 text-gray-300 hover:text-white">
                       {item.name}
                     </Link>
                   </li>
