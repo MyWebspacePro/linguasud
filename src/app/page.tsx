@@ -237,38 +237,74 @@ export default function Home() {
               <p className="text-gray-600 mb-8">
                 Haben Sie Fragen zu unseren Kursen oder möchten Sie eine kostenlose Einstufung vereinbaren? Wir sind gerne für Sie da.
               </p>
-              <dl className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <dt className="flex-none">
-                    <Building2 className="h-6 w-6 text-primary-600" />
-                  </dt>
-                  <dd className="text-gray-600">
-                    Musterstraße 123
-                    <br />
-                    8000 Zürich, Schweiz
-                  </dd>
-                </div>
-                <div className="flex items-start gap-4">
-                  <dt className="flex-none">
-                    <Phone className="h-6 w-6 text-primary-600" />
-                  </dt>
-                  <dd>
-                    <a href="tel:+41441234567" className="text-gray-600 hover:text-gray-900">
-                      +41 44 123 45 67
-                    </a>
-                  </dd>
-                </div>
-                <div className="flex items-start gap-4">
-                  <dt className="flex-none">
-                    <Mail className="h-6 w-6 text-primary-600" />
-                  </dt>
-                  <dd>
-                    <a href="mailto:info@linguasud.ch" className="text-gray-600 hover:text-gray-900">
-                      info@linguasud.ch
-                    </a>
-                  </dd>
-                </div>
-              </dl>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Standort Zürich */}
+                <dl className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <dt className="flex-none">
+                      <Building2 className="h-6 w-6 text-primary-600" />
+                    </dt>
+                    <dd className="text-gray-600">
+                      Musterstraße 123
+                      <br />
+                      8000 Zürich, Schweiz
+                    </dd>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <dt className="flex-none">
+                      <Phone className="h-6 w-6 text-primary-600" />
+                    </dt>
+                    <dd>
+                      <a href="tel:+41441234567" className="text-gray-600 hover:text-gray-900">
+                        +41 44 123 45 67
+                      </a>
+                    </dd>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <dt className="flex-none">
+                      <Mail className="h-6 w-6 text-primary-600" />
+                    </dt>
+                    <dd>
+                      <a href="mailto:info@linguasud.ch" className="text-gray-600 hover:text-gray-900">
+                        info@linguasud.ch
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
+                {/* Standort Bern */}
+                <dl className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <dt className="flex-none">
+                      <Building2 className="h-6 w-6 text-primary-600" />
+                    </dt>
+                    <dd className="text-gray-600">
+                      Hauptgasse 45
+                      <br />
+                      3011 Bern, Schweiz
+                    </dd>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <dt className="flex-none">
+                      <Phone className="h-6 w-6 text-primary-600" />
+                    </dt>
+                    <dd>
+                      <a href="tel:+41311234567" className="text-gray-600 hover:text-gray-900">
+                        +41 31 123 45 67
+                      </a>
+                    </dd>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <dt className="flex-none">
+                      <Mail className="h-6 w-6 text-primary-600" />
+                    </dt>
+                    <dd>
+                      <a href="mailto:bern@linguasud.ch" className="text-gray-600 hover:text-gray-900">
+                        bern@linguasud.ch
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
               <div className="mt-8">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Öffnungszeiten Sekretariat</h3>
                 <ul className="space-y-2 text-gray-600">
