@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Globe2, Users, BookOpen, Award, Building2, Mail, Phone } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Globe2, Users, UserCheck, BookOpen, Award, Building2, Mail, Phone } from 'lucide-react';
 import { courses } from '@/data/courses';
 import { testimonials } from '@/data/testimonials';
 import Image from 'next/image';
