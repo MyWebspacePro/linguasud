@@ -306,21 +306,13 @@ export default function Home() {
                 </dl>
               </div>
               <div className="mt-8">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Öffnungszeiten Sekretariat</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Bürozeiten</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li className="flex justify-between max-w-xs">
-                    <span>Montag - Freitag:</span>
-                    <span>08:30 - 18:00 Uhr</span>
-                  </li>
-                  <li className="flex justify-between max-w-xs">
-                    <span>Samstag:</span>
-                    <span>09:00 - 13:00 Uhr</span>
-                  </li>
-                  <li className="flex justify-between max-w-xs">
-                    <span>Sonntag:</span>
-                    <span>Geschlossen</span>
-                  </li>
+                  <li>Montag - Freitag</li>
+                  <li>08.00 - 12.00 Uhr</li>
+                  <li>13.00 - 17.00 Uhr</li>
                 </ul>
+                <p className="mt-4 text-gray-600">Außerhalb der Bürozeiten gerne nach Terminabsprache</p>
               </div>
             </div>
 
