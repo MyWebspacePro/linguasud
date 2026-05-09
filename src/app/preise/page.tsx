@@ -6,11 +6,11 @@ const tiers = [
     name: 'Gruppenkurse',
     id: 'tier-group',
     href: '/kurse?format=group',
-    priceMonthly: 'ab 350',
+    priceMonthly: 'ab 498',
     description: 'Lernen Sie gemeinsam mit anderen in kleinen, interaktiven Gruppen.',
     features: [
-      'Maximal 8-10 Teilnehmer',
-      'Feste Kurszeiten',
+      'Kleingruppe (4-6 Personen): ab CHF 498 (60 min)',
+      'Max. 4 Personen (3-4): ab CHF 584 (60 min)',
       'Interaktiver Unterricht',
       'Inklusive Lehrmaterial',
       'Zertifikat nach Abschluss',
@@ -21,14 +21,14 @@ const tiers = [
     name: 'Einzelunterricht',
     id: 'tier-individual',
     href: '/kurse?format=individual',
-    priceMonthly: 'ab 85',
+    priceMonthly: 'ab 79.50',
     priceUnit: '/ Lektion',
     description: 'Maßgeschneiderter Unterricht für maximale Flexibilität und schnellen Fortschritt.',
     features: [
-      '1-zu-1 Betreuung',
+      'Normaltarif: ab CHF 88 (45 min)',
+      'Niedertarif: ab CHF 79.50 (45 min)',
       'Flexible Terminwahl',
       'Individuelle Lerninhalte',
-      'Fokus auf Ihre Ziele',
       'Kostenlose Probestunde',
     ],
     mostPopular: false,
@@ -145,6 +145,56 @@ export default function PricingPage() {
           ))}
         </div>
         
+        {/* Preise Details Section */}
+        <div className="mx-auto max-w-4xl mt-24 sm:mt-32">
+          <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900 mb-8">Preisübersicht</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Gruppenkurse Details */}
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Gruppenkurse - Preise pro Person</h3>
+              <div className="space-y-3 text-sm text-gray-600">
+                <div className="flex justify-between">
+                  <span>Kleingruppe (4-6 Personen):</span>
+                  <span>CHF 498-698</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Max. 4 Personen (3-4):</span>
+                  <span>CHF 584-929</span>
+                </div>
+                <div className="text-xs text-gray-500 mt-2">
+                  * Preise variieren je nach Lektionsdauer (60-120 min)
+                </div>
+              </div>
+            </div>
+            
+            {/* Einzelunterricht Details */}
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Einzelunterricht - Preise pro Lektion</h3>
+              <div className="space-y-3 text-sm text-gray-600">
+                <div className="flex justify-between">
+                  <span>Normaltarif (45 min):</span>
+                  <span>CHF 88</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Niedertarif (45 min):</span>
+                  <span>CHF 79.50</span>
+                </div>
+                <div className="text-xs text-gray-500 mt-2">
+                  * Preise variieren je nach Lektionsdauer (45-120 min)
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Studentenrabatt */}
+          <div className="mt-8 bg-primary-50 rounded-lg p-6">
+            <h3 className="text-lg font-semibold text-primary-900 mb-2">Studentenrabatt</h3>
+            <p className="text-primary-700">
+              Vollzeit-Studenten und Lehrlinge bis 25 Jahre erhalten 10% Rabatt auf alle Gruppenkurse (zusätzlich zum Mengenrabatt).
+            </p>
+          </div>
+        </div>
+        
         {/* FAQ Section */}
         <div className="mx-auto max-w-4xl mt-24 sm:mt-32">
           <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900 mb-8">Häufig gestellte Fragen zu den Preisen</h2>
@@ -152,7 +202,7 @@ export default function PricingPage() {
             {[
               {
                 question: 'Gibt es Rabatte für Studenten oder Arbeitslose?',
-                answer: 'Ja, gegen Vorlage eines gültigen Ausweises gewähren wir 10% Rabatt auf alle Gruppenkurse.',
+                answer: 'Ja, gegen Vorlage eines gültigen Ausweises gewähren wir 10% Rabatt auf alle Gruppenkurse. Studenten und Lehrlinge bis 25 Jahre erhalten zusätzlich zum Mengenrabatt.',
               },
               {
                 question: 'Sind die Lehrmaterialien im Preis inbegriffen?',
