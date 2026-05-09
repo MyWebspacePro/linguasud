@@ -50,19 +50,36 @@ export default function PricingPage() {
               <tbody className="bg-white divide-y divide-gray-200">
                 <tr className="hover:bg-gray-50">
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    Kleingruppe (4-6 Personen)
+                    2er Gruppe / Partnerkurs
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
-                    CHF 498
+                    CHF 2,798.00
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
-                    CHF 558
+                    CHF 898.00
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
-                    CHF 584
+                    CHF 998.00
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
-                    CHF 698
+                    CHF 1,298.00
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    Minigruppe (2-3 Personen)
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
+                    CHF 3,688.00
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
+                    CHF 798.00
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
+                    CHF 896.00
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
+                    CHF 1,148.00
                   </td>
                 </tr>
                 <tr className="hover:bg-gray-50">
@@ -70,16 +87,33 @@ export default function PricingPage() {
                     Max. 4 Personen (3-4)
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
-                    CHF 584
+                    CHF 584.00
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
-                    CHF 636
+                    CHF 636.00
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
-                    CHF 699
+                    CHF 699.00
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
-                    CHF 929
+                    CHF 929.00
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    Kleingruppe (4-6 Personen)
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
+                    CHF 498.00
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
+                    CHF 558.00
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
+                    CHF 584.00
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
+                    CHF 698.00
                   </td>
                 </tr>
               </tbody>
