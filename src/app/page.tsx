@@ -297,85 +297,8 @@ export default function Home() {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Kontaktieren Sie uns</h2>
               <p className="text-lg text-gray-600 mb-8">
-                Haben Sie Fragen zu unseren Kursen oder möchten Sie eine kostenlose Einstufung und Beratung vereinbaren? Wir sind gerne für Sie da und finden gemeinsam den perfekten Kurs für Ihre Bedürfnisse. Unser Team steht Ihnen jederzeit zur Verfügung.
+                Haben Sie Fragen zu unseren Kursen oder möchten Sie eine kostenlose Einstufung und Beratung vereinbaren? Wir sind gerne für Sie da und finden gemeinsam den perfekten Kurs für Ihre Bedürfnisse. Unser Team steht Ihnen jederzeit zur Verfügung. Sie erreichen uns telefonisch, per E-Mail oder über das Kontaktformular rechts.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Standort Zürich */}
-                <dl className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <dt className="flex-none">
-                      <Building2 className="h-6 w-6 text-primary-600" />
-                    </dt>
-                    <dd className="text-gray-600">
-                      Musterstraße 123
-                      <br />
-                      8000 Zürich, Schweiz
-                    </dd>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <dt className="flex-none">
-                      <Phone className="h-6 w-6 text-primary-600" />
-                    </dt>
-                    <dd>
-                      <a href="tel:+41441234567" className="text-gray-600 hover:text-gray-900">
-                        +41 44 123 45 67
-                      </a>
-                    </dd>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <dt className="flex-none">
-                      <Mail className="h-6 w-6 text-primary-600" />
-                    </dt>
-                    <dd>
-                      <a href="mailto:info@linguasud.ch" className="text-gray-600 hover:text-gray-900">
-                        info@linguasud.ch
-                      </a>
-                    </dd>
-                  </div>
-                </dl>
-                {/* Standort Bern */}
-                <dl className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <dt className="flex-none">
-                      <Building2 className="h-6 w-6 text-primary-600" />
-                    </dt>
-                    <dd className="text-gray-600">
-                      Hauptgasse 45
-                      <br />
-                      3011 Bern, Schweiz
-                    </dd>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <dt className="flex-none">
-                      <Phone className="h-6 w-6 text-primary-600" />
-                    </dt>
-                    <dd>
-                      <a href="tel:+41311234567" className="text-gray-600 hover:text-gray-900">
-                        +41 31 123 45 67
-                      </a>
-                    </dd>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <dt className="flex-none">
-                      <Mail className="h-6 w-6 text-primary-600" />
-                    </dt>
-                    <dd>
-                      <a href="mailto:bern@linguasud.ch" className="text-gray-600 hover:text-gray-900">
-                        bern@linguasud.ch
-                      </a>
-                    </dd>
-                  </div>
-                </dl>
-              </div>
-              <div className="mt-8">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Bürozeiten</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>Montag - Freitag</li>
-                  <li>08.00 - 12.00 Uhr</li>
-                  <li>13.00 - 17.00 Uhr</li>
-                </ul>
-                <p className="mt-4 text-gray-600">Außerhalb der Bürozeiten gerne nach Terminabsprache</p>
-              </div>
             </div>
 
             {/* Contact Form */}

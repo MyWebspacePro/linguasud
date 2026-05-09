@@ -75,9 +75,9 @@ export function Footer() {
       </h2>
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-5 xl:gap-8">
-          {/* Öffnungszeiten */}
+          {/* Bürozeiten */}
           <div className="mb-12 xl:mb-0">
-            <h3 className="text-lg font-medium leading-6 text-white">Öffnungszeiten</h3>
+            <h3 className="text-lg font-medium leading-6 text-white">Bürozeiten</h3>
             <ul role="list" className="mt-6 space-y-4 text-gray-300">
               <li>Montag - Freitag</li>
               <li>08.00 - 12.00 Uhr</li>
