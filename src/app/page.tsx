@@ -281,8 +281,8 @@ export default function Home() {
               Kontaktieren Sie uns für eine kostenlose Einstufung und Beratung. Wir finden den perfekten Kurs für Sie.
             </p>
             <div className="mt-10 flex items-center justify-center">
-              <Link href="/kurse" className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary-600 shadow-sm hover:bg-primary-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors">
-                Kurse durchstöbern <span aria-hidden="true">→</span>
+              <Link href="/#kontakt-formular" className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary-600 shadow-sm hover:bg-primary-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors">
+                Jetzt Beratung anfordern <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
