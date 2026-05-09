@@ -55,7 +55,14 @@ export function Header() {
             </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end"></div>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <Link
+            href="/#kontakt-formular"
+            className="rounded-md bg-primary-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-colors"
+          >
+            Kostenlose Beratung
+          </Link>
+        </div>
       </nav>
       
       {/* Mobile menu */}
@@ -110,6 +117,15 @@ export function Header() {
                     {item.name}
                   </Link>
                 ))}
+              </div>
+              <div className="py-6">
+                <Link
+                  href="/#kontakt-formular"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Kostenlose Beratung
+                </Link>
               </div>
             </div>
           </div>

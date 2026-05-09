@@ -8,10 +8,44 @@ import { testimonials } from '@/data/testimonials';
 import Image from 'next/image';
 import { ConsultationPopup } from '@/components/ui/ConsultationPopup';
 import { motion } from 'framer-motion';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+
+const formSchema = z.object({
+  firstName: z.string().min(2, 'Vorname muss mindestens 2 Zeichen lang sein'),
+  lastName: z.string().min(2, 'Nachname muss mindestens 2 Zeichen lang sein'),
+  email: z.string().email('Ungültige E-Mail-Adresse'),
+  phone: z.string().optional(),
+  language: z.string().min(1, 'Bitte wählen Sie eine Sprache'),
+  level: z.string().min(1, 'Bitte wählen Sie ein Niveau'),
+  lessonType: z.string().min(1, 'Bitte wählen Sie eine Unterrichtsform'),
+  comments: z.string().optional(),
+});
+
+type FormData = z.infer<typeof formSchema>;
 
 export default function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [showComments, setShowComments] = useState(false);
   const popularCourses = courses.filter(course => course.isPopular).slice(0, 3);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+  });
+
+  const onSubmit = async (data: FormData) => {
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    console.log(data);
+    reset();
+    alert('Vielen Dank für Ihre Anfrage! Wir melden uns bald bei Ihnen.');
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -344,48 +378,169 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Quick Contact Form */}
-            <div className="bg-white rounded-2xl shadow-sm p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Schnellkontakt</h3>
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="quick-name" className="block text-sm font-medium text-gray-700">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="quick-name"
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
-                    placeholder="Ihr Name"
-                  />
+            {/* Contact Form */}
+            <div className="bg-white rounded-2xl shadow-sm p-8" id="kontakt-formular">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Kostenlose Beratung anfordern</h3>
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
+                      Vorname *
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      {...register('firstName')}
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                      placeholder="Max"
+                    />
+                    {errors.firstName && (
+                      <p className="mt-1 text-sm text-red-600">{errors.firstName.message}</p>
+                    )}
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
+                      Nachname *
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      {...register('lastName')}
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                      placeholder="Mustermann"
+                    />
+                    {errors.lastName && (
+                      <p className="mt-1 text-sm text-red-600">{errors.lastName.message}</p>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <label htmlFor="quick-email" className="block text-sm font-medium text-gray-700">
-                    E-Mail
-                  </label>
-                  <input
-                    type="email"
-                    id="quick-email"
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
-                    placeholder="ihre@email.ch"
-                  />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                      E-Mail *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      {...register('email')}
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                      placeholder="max.mustermann@email.ch"
+                    />
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+                    )}
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                      Telefonnummer
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      {...register('phone')}
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                      placeholder="+41 44 123 45 67"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label htmlFor="quick-message" className="block text-sm font-medium text-gray-700">
-                    Nachricht
-                  </label>
-                  <textarea
-                    id="quick-message"
-                    rows={3}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
-                    placeholder="Wie können wir Ihnen helfen?"
-                  />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="language" className="block text-sm font-medium text-gray-700">
+                      Gewünschte Sprache *
+                    </label>
+                    <select
+                      id="language"
+                      {...register('language')}
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                    >
+                      <option value="">Bitte wählen...</option>
+                      <option value="deutsch">Deutsch</option>
+                      <option value="englisch">Englisch</option>
+                      <option value="franzoesisch">Französisch</option>
+                      <option value="italienisch">Italienisch</option>
+                      <option value="spanisch">Spanisch</option>
+                    </select>
+                    {errors.language && (
+                      <p className="mt-1 text-sm text-red-600">{errors.language.message}</p>
+                    )}
+                  </div>
+                  <div>
+                    <label htmlFor="level" className="block text-sm font-medium text-gray-700">
+                      Niveau (Selbsteinschätzung) *
+                    </label>
+                    <select
+                      id="level"
+                      {...register('level')}
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                    >
+                      <option value="">Bitte wählen...</option>
+                      <option value="a1">A1 - Anfänger</option>
+                      <option value="a2">A2 - Grundkenntnisse</option>
+                      <option value="b1">B1 - Mittelstufe</option>
+                      <option value="b2">B2 - Oberstufe</option>
+                      <option value="c1">C1 - Fortgeschritten</option>
+                    </select>
+                    {errors.level && (
+                      <p className="mt-1 text-sm text-red-600">{errors.level.message}</p>
+                    )}
+                  </div>
                 </div>
+
+                <div>
+                  <label htmlFor="lessonType" className="block text-sm font-medium text-gray-700">
+                    Gewünschte Unterrichtsform *
+                  </label>
+                  <select
+                    id="lessonType"
+                    {...register('lessonType')}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                  >
+                    <option value="">Bitte wählen...</option>
+                    <option value="gruppenunterricht">Gruppenunterricht</option>
+                    <option value="minigruppe">Minigruppe (3-5 Personen)</option>
+                    <option value="2er">2er-Gruppe</option>
+                    <option value="einzel">Einzelunterricht</option>
+                  </select>
+                  {errors.lessonType && (
+                    <p className="mt-1 text-sm text-red-600">{errors.lessonType.message}</p>
+                  )}
+                </div>
+
+                <div>
+                  <button
+                    type="button"
+                    onClick={() => setShowComments(!showComments)}
+                    className="text-sm text-primary-600 hover:text-primary-500 flex items-center gap-1"
+                  >
+                    {showComments ? 'Bemerkungen ausblenden' : 'Bemerkungen hinzufügen'}
+                    <svg className={`w-4 h-4 transition-transform ${showComments ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {showComments && (
+                    <div className="mt-2">
+                      <label htmlFor="comments" className="block text-sm font-medium text-gray-700">
+                        Bemerkungen
+                      </label>
+                      <textarea
+                        id="comments"
+                        rows={3}
+                        {...register('comments')}
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                        placeholder="Weitere Informationen zu Ihren Anforderungen..."
+                      />
+                    </div>
+                  )}
+                </div>
+
                 <button
                   type="submit"
-                  className="w-full rounded-md bg-primary-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full rounded-md bg-primary-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-colors disabled:opacity-50"
                 >
-                  Nachricht senden
+                  {isSubmitting ? 'Wird gesendet...' : 'Beratung anfordern'}
                 </button>
               </form>
             </div>
