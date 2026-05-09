@@ -50,7 +50,7 @@ export default function PricingPage() {
               <tbody className="bg-white divide-y divide-gray-200">
                 <tr className="hover:bg-gray-50">
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    2 Teilnehmer
+                    2 TeilnehmerInnen
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
                     CHF 798.00
@@ -67,7 +67,7 @@ export default function PricingPage() {
                 </tr>
                 <tr className="hover:bg-gray-50">
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    bis 3 Teilnehmer                  </td>
+                    bis 3 TeilnehmerInnen                  </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
                     CHF 688.00
                   </td>
@@ -83,7 +83,7 @@ export default function PricingPage() {
                 </tr>
                 <tr className="hover:bg-gray-50">
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    bis 4 Teilnehmer
+                    bis 4 TeilnehmerInnen
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
                     CHF 584.00
@@ -100,7 +100,7 @@ export default function PricingPage() {
                 </tr>
                 <tr className="hover:bg-gray-50">
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    bis 6 Teilnehmer
+                    bis 6 TeilnehmerInnen
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
                     CHF 498.00
