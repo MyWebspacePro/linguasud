@@ -74,55 +74,94 @@ export function Footer() {
         Footer
       </h2>
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-        <div className="xl:grid xl:grid-cols-4 xl:gap-8">
-          <div className="space-y-8">
-            <Link href="/" className="flex items-center gap-2">
-              <Globe2 className="h-8 w-8 text-primary-500" />
-              <span className="text-2xl font-bold text-white">Linguasud</span>
-            </Link>
-            <p className="text-sm leading-6 text-gray-300">
-              Ihre Sprachschule für lebendiges Lernen. Entdecken Sie neue Kulturen und erweitern Sie Ihren Horizont mit unseren professionellen Sprachkursen.
+        <div className="xl:grid xl:grid-cols-5 xl:gap-8">
+          {/* Öffnungszeiten */}
+          <div className="mb-12 xl:mb-0">
+            <h3 className="text-lg font-medium leading-6 text-white">Öffnungszeiten</h3>
+            <ul role="list" className="mt-6 space-y-4 text-gray-300">
+              <li>Montag - Freitag</li>
+              <li>08.00 - 12.00 Uhr</li>
+              <li>13.00 - 17.00 Uhr</li>
+              <li className="pt-2 text-sm">Außerhalb der Bürozeiten gerne nach Terminabsprache</li>
+            </ul>
+          </div>
+
+          {/* Standort Zürich */}
+          <div className="mb-12 xl:mb-0">
+            <h3 className="text-lg font-medium leading-6 text-white">Standort Zürich</h3>
+            <address className="mt-6 space-y-4 text-gray-300 not-italic">
+              <p>Musterstraße 123<br />8000 Zürich, Schweiz</p>
+              <p>
+                <a href="tel:+41441234567" className="hover:text-white">+41 44 123 45 67</a>
+              </p>
+              <p>
+                <a href="mailto:info@linguasud.ch" className="hover:text-white">info@linguasud.ch</a>
+              </p>
+            </address>
+          </div>
+
+          {/* Standort Bern */}
+          <div className="mb-12 xl:mb-0">
+            <h3 className="text-lg font-medium leading-6 text-white">Standort Bern</h3>
+            <address className="mt-6 space-y-4 text-gray-300 not-italic">
+              <p>Hauptgasse 45<br />3011 Bern, Schweiz</p>
+              <p>
+                <a href="tel:+41311234567" className="hover:text-white">+41 31 123 45 67</a>
+              </p>
+              <p>
+                <a href="mailto:bern@linguasud.ch" className="hover:text-white">bern@linguasud.ch</a>
+              </p>
+            </address>
+          </div>
+
+          {/* Sprachen */}
+          <div className="mb-12 xl:mb-0">
+            <h3 className="text-lg font-medium leading-6 text-white">Sprachen</h3>
+            <ul role="list" className="mt-6 space-y-4">
+              {navigation.courses.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-lg font-normal leading-6 text-gray-300 hover:text-white">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Rechtliches */}
+          <div className="mb-12 xl:mb-0">
+            <h3 className="text-lg font-medium leading-6 text-white">Rechtliches</h3>
+            <ul role="list" className="mt-6 space-y-4">
+              {navigation.legal.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-lg font-normal leading-6 text-gray-300 hover:text-white">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-2">
+              <Globe2 className="h-6 w-6 text-primary-500" />
+              <span className="text-lg font-bold text-white">Linguasud</span>
+            </div>
+            <p className="text-xs leading-5 text-gray-400">
+              &copy; {new Date().getFullYear()} Linguasud Sprachschule. Alle Rechte vorbehalten.
             </p>
-            <div className="flex space-x-6">
+            <div className="flex space-x-4">
               {navigation.social.map((item) => (
                 <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">
                   <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-6 w-6" aria-hidden="true" />
+                  <item.icon className="h-5 w-5" aria-hidden="true" />
                 </a>
               ))}
             </div>
           </div>
-          <div className="mt-16 xl:mt-0 xl:flex xl:gap-[107px] xl:col-span-3 xl:justify-end">
-            <div className="mb-12 flex flex-col xl:mb-0 xl:w-40">
-              <h3 className="text-lg font-medium leading-6 text-white">Sprachen</h3>
-              <ul role="list" className="mt-6 space-y-4">
-                {navigation.courses.map((item) => (
-                  <li key={item.name}>
-                    <Link href={item.href} className="text-lg font-normal leading-6 text-gray-300 hover:text-white">
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex flex-col xl:w-40">
-              <h3 className="text-lg font-medium leading-6 text-white">Rechtliches</h3>
-              <ul role="list" className="mt-6 space-y-4">
-                {navigation.legal.map((item) => (
-                  <li key={item.name}>
-                    <Link href={item.href} className="text-lg font-normal leading-6 text-gray-300 hover:text-white">
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-xs leading-5 text-gray-400">
-            &copy; {new Date().getFullYear()} Linguasud Sprachschule. Alle Rechte vorbehalten.
-          </p>
         </div>
       </div>
     </footer>

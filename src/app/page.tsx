@@ -295,9 +295,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Kontaktieren Sie uns</h2>
-              <p className="text-gray-600 mb-8">
-                Haben Sie Fragen zu unseren Kursen oder möchten Sie eine kostenlose Einstufung vereinbaren? Wir sind gerne für Sie da.
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Kontaktieren Sie uns</h2>
+              <p className="text-lg text-gray-600 mb-8">
+                Haben Sie Fragen zu unseren Kursen oder möchten Sie eine kostenlose Einstufung und Beratung vereinbaren? Wir sind gerne für Sie da und finden gemeinsam den perfekten Kurs für Ihre Bedürfnisse. Unser Team steht Ihnen jederzeit zur Verfügung.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Standort Zürich */}
