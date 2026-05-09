@@ -246,14 +246,8 @@ export default function Home() {
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-primary-100">
               Kontaktieren Sie uns für eine kostenlose Einstufung und Beratung. Wir finden den perfekten Kurs für Sie.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
-                href="/kontakt"
-                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-primary-600 shadow-sm hover:bg-primary-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors"
-              >
-                Jetzt kontaktieren
-              </Link>
-              <Link href="/kurse" className="text-sm font-semibold leading-6 text-white hover:text-primary-100">
+            <div className="mt-10 flex items-center justify-center">
+              <Link href="/kurse" className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary-600 shadow-sm hover:bg-primary-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors">
                 Kurse durchstöbern <span aria-hidden="true">→</span>
               </Link>
             </div>

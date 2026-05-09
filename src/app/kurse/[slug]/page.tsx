@@ -164,15 +164,8 @@ export default function CourseDetailPage({ params }: PageProps) {
                 </div>
               </div>
 
-              <Link
-                href="/kontakt"
-                className="block w-full rounded-md bg-primary-600 px-6 py-3 text-center text-base font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-colors"
-              >
-                Jetzt anmelden
-              </Link>
-
-              <p className="mt-4 text-center text-sm text-gray-500">
-                Oder rufen Sie uns an: +41 44 123 45 67
+              <p className="text-center text-sm text-gray-500">
+                Für Anmeldungen rufen Sie uns an: +41 44 123 45 67
               </p>
             </div>
           </div>
