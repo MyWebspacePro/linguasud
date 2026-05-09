@@ -159,13 +159,7 @@ export default function CoursesPage() {
                       {course.duration}
                     </div>
                   </div>
-                  <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
-                    <div className="text-lg font-bold text-gray-900">
-                      CHF {course.price}
-                      <span className="text-sm font-normal text-gray-500">
-                        {course.priceUnit === 'total' ? ' gesamt' : course.priceUnit === 'per_month' ? '/Monat' : '/Lektion'}
-                      </span>
-                    </div>
+                  <div className="flex items-center justify-end mt-auto pt-6 border-t border-gray-100">
                     <Link
                       href={`/kurse/${course.slug}`}
                       className="rounded-md bg-primary-50 px-3 py-2 text-sm font-semibold text-primary-600 hover:bg-primary-100 transition-colors"

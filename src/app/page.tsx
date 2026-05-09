@@ -205,13 +205,7 @@ export default function Home() {
                       {course.duration}
                     </div>
                   </div>
-                  <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
-                    <div className="text-lg font-bold text-gray-900">
-                      CHF {course.price}
-                      <span className="text-sm font-normal text-gray-500">
-                        {course.priceUnit === 'total' ? ' gesamt' : course.priceUnit === 'per_month' ? '/Monat' : '/Lektion'}
-                      </span>
-                    </div>
+                  <div className="flex items-center justify-end mt-auto pt-6 border-t border-gray-100">
                     <Link
                       href={`/kurse/${course.slug}`}
                       className="text-primary-600 font-semibold hover:text-primary-700"

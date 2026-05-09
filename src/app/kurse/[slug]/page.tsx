@@ -148,22 +148,6 @@ export default function CourseDetailPage({ params }: PageProps) {
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 pt-6 mb-8">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-gray-900">{course.price}</span>
-                  <span className="text-gray-600">CHF</span>
-                  {course.priceUnit === 'total' && (
-                    <span className="text-sm text-gray-500">pro Kurs</span>
-                  )}
-                  {course.priceUnit === 'per_lesson' && (
-                    <span className="text-sm text-gray-500">pro Lektion</span>
-                  )}
-                  {course.priceUnit === 'per_month' && (
-                    <span className="text-sm text-gray-500">pro Monat</span>
-                  )}
-                </div>
-              </div>
-
               <p className="text-center text-sm text-gray-500">
                 Für Anmeldungen rufen Sie uns an: +41 44 123 45 67
               </p>

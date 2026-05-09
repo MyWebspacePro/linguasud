@@ -9,8 +9,6 @@ export interface Course {
   format: 'group' | 'individual' | 'online' | 'hybrid';
   duration: string;
   schedule: string;
-  price: number;
-  priceUnit: 'per_lesson' | 'per_month' | 'total';
   image: string;
   features: string[];
   targetAudience: string;

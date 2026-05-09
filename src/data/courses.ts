@@ -12,8 +12,6 @@ export const courses: Course[] = [
     format: 'group',
     duration: '8 Wochen',
     schedule: 'Mo-Fr, 09:00 - 12:15 Uhr',
-    price: 850,
-    priceUnit: 'total',
     image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800',
     features: [
       'Kleine Gruppen (max. 8 Personen)',
@@ -37,8 +35,6 @@ export const courses: Course[] = [
     format: 'group',
     duration: '12 Wochen',
     schedule: 'Di & Do, 18:30 - 20:00 Uhr',
-    price: 420,
-    priceUnit: 'total',
     image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800',
     features: [
       'Fokus auf freies Sprechen',
@@ -61,8 +57,6 @@ export const courses: Course[] = [
     format: 'online',
     duration: '10 Wochen',
     schedule: 'Flexibel (1 Live-Session pro Woche)',
-    price: 350,
-    priceUnit: 'total',
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
     features: [
       'Flexible Zeiteinteilung',
@@ -84,8 +78,6 @@ export const courses: Course[] = [
     format: 'group',
     duration: '10 Wochen',
     schedule: 'Mi, 18:00 - 20:30 Uhr',
-    price: 380,
-    priceUnit: 'total',
     image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&q=80&w=800',
     features: [
       'Spielerischer Einstieg',
@@ -108,8 +100,6 @@ export const courses: Course[] = [
     format: 'individual',
     duration: 'Flexibel',
     schedule: 'Nach Vereinbarung',
-    price: 85,
-    priceUnit: 'per_lesson',
     image: 'https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&q=80&w=800',
     features: [
       '100% individuelle Betreuung',
