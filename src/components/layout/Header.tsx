@@ -19,12 +19,12 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <header className="bg-white shadow-sm sticky top-0 z-50" role="banner">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Hauptnavigation">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
+          <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2" aria-label="Linguasud Startseite">
             <span className="sr-only">Linguasud</span>
-            <Globe2 className="h-8 w-8 text-primary-600" />
+            <Globe2 className="h-8 w-8 text-primary-600" aria-hidden="true" />
             <span className="text-2xl font-bold text-gray-900">Linguasud</span>
           </Link>
         </div>
@@ -33,6 +33,9 @@ export function Header() {
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
             onClick={() => setMobileMenuOpen(true)}
+            aria-expanded={false}
+            aria-controls="mobile-menu"
+            aria-label="Hauptmenü öffnen"
           >
             <span className="sr-only">Hauptmenü öffnen</span>
             <Menu className="h-6 w-6" aria-hidden="true" />
@@ -47,6 +50,7 @@ export function Header() {
                 "text-xl font-normal leading-6 transition-colors",
                 pathname === item.href ? "text-primary-600" : "text-gray-900 hover:text-primary-600"
               )}
+              aria-current={pathname === item.href ? 'page' : undefined}
             >
               {item.name}
             </Link>
@@ -63,19 +67,35 @@ export function Header() {
       </nav>
       
       {/* Mobile menu */}
-      <div className={cn("lg:hidden", mobileMenuOpen ? "fixed inset-0 z-50" : "hidden")}>
-        <div className="fixed inset-0 bg-black/20 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
+      <div
+        className={cn("lg:hidden", mobileMenuOpen ? "fixed inset-0 z-50" : "hidden")}
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile Navigation"
+      >
+        <div
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
         <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
+            <Link
+              href="/"
+              className="-m-1.5 p-1.5 flex items-center gap-2"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Linguasud Startseite"
+            >
               <span className="sr-only">Linguasud</span>
-              <Globe2 className="h-8 w-8 text-primary-600" />
+              <Globe2 className="h-8 w-8 text-primary-600" aria-hidden="true" />
               <span className="text-xl font-bold text-gray-900">Linguasud</span>
             </Link>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
               onClick={() => setMobileMenuOpen(false)}
+              aria-label="Menü schließen"
             >
               <span className="sr-only">Menü schließen</span>
               <X className="h-6 w-6" aria-hidden="true" />
@@ -93,6 +113,7 @@ export function Header() {
                       pathname === item.href ? "text-primary-600 bg-gray-50" : "text-gray-900"
                     )}
                     onClick={() => setMobileMenuOpen(false)}
+                    aria-current={pathname === item.href ? 'page' : undefined}
                   >
                     {item.name}
                   </Link>

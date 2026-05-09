@@ -7,6 +7,7 @@ import { courses } from '@/data/courses';
 import { testimonials } from '@/data/testimonials';
 import Image from 'next/image';
 import { ConsultationPopup } from '@/components/ui/ConsultationPopup';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -26,15 +27,35 @@ export default function Home() {
           />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 z-10">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-6">
+          <motion.div
+            className="max-w-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.h1
+              className="text-4xl font-bold tracking-tight sm:text-6xl mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
               Sprachen lernen, <br />
               <span className="text-primary-400">Welt entdecken.</span>
-            </h1>
-            <p className="text-lg leading-8 text-gray-300 mb-8">
+            </motion.h1>
+            <motion.p
+              className="text-lg leading-8 text-gray-300 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               Linguasud ist Ihre Sprachschule für lebendiges Lernen. Mit muttersprachlichen Lehrkräften, kleinen Gruppen und modernen Methoden bringen wir Sie schnell an Ihr Ziel.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            </motion.p>
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
               <Link
                 href="/kurse"
                 className="rounded-md bg-primary-600 px-6 py-3 text-center text-base font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-colors flex items-center justify-center gap-2"
@@ -47,20 +68,26 @@ export default function Home() {
               >
                 Kostenlose Beratung
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* USP Section */}
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-16">
+          <motion.div
+            className="mx-auto max-w-2xl text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Warum Linguasud?</h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
               Wir bieten mehr als nur Vokabeln und Grammatik. Bei uns tauchen Sie in die Sprache und Kultur ein.
             </p>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
@@ -83,14 +110,21 @@ export default function Home() {
                 description: 'Gezielte Vorbereitung auf anerkannte Sprachzertifikate.',
                 icon: Award,
               },
-            ].map((feature) => (
-              <div key={feature.title} className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-2xl">
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-2xl"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
                 <div className="h-12 w-12 rounded-lg bg-primary-100 flex items-center justify-center mb-4">
                   <feature.icon className="h-6 w-6 text-primary-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
